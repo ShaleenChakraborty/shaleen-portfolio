@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Me | Shaleen Chakraborty</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #0a192f;
+      color: #ccd6f6;
+      line-height: 1.6;
+      padding-top: 80px;
+    }
+
+    /* Navbar */
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: #0a192f;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 60px;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    }
+    .logo {
+      font-size: 22px;
+      color: #64ffda;
+      border: 2px solid #64ffda;
+      padding: 5px 10px;
+      border-radius: 50%;
+      font-weight: bold;
+    }
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 25px;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: #ccd6f6;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+    .nav-links a:hover {
+      color: #64ffda;
+    }
+    .resume-btn {
+      border: 1px solid #64ffda;
+      padding: 8px 15px;
+      border-radius: 5px;
+      color: #64ffda !important;
+      transition: all 0.3s;
+    }
+    .resume-btn:hover {
+      background: rgba(100, 255, 218, 0.1);
+    }
+
+    /* About Section */
+    .about-section {
+      max-width: 1000px;
+      margin: 80px auto;
+      padding: 0 20px;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+    .about-section h1 {
+      font-size: 2.5rem;
+      color: #64ffda;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+    .about-wrapper {
+      display: flex;
+      gap: 40px;
+      align-items: center;
+      flex-wrap: wrap-reverse;
+      justify-content: center;
+    }
+    .about-text {
+      flex: 1;
+      min-width: 280px;
+    }
+    .about-text p {
+      color: #a8b2d1;
+      font-size: 1.05rem;
+      margin-bottom: 20px;
+      line-height: 1.8;
+    }
+    .highlight {
+      color: #64ffda;
+      font-weight: 500;
+    }
+    .about-photo {
+      flex-shrink: 0;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+    .about-photo img {
+      width: 490px;
+      max-width: 90vw;
+      height: auto;
+      border-radius: 12px;
+      filter: drop-shadow(0 5px 20px rgba(100, 255, 218, 0.2));
+      transition: transform 0.4s ease;
+    }
+    .about-photo img:hover {
+      transform: scale(1.05);
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        gap: 10px;
+        padding: 15px;
+      }
+      .about-wrapper {
+        flex-direction: column-reverse;
+        text-align: center;
+      }
+      .about-photo img {
+        width: 280px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-left">
+      <div class="logo">S</div>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="Shaleen_Chakraborty_Resume.pdf" class="resume-btn" download>Resume</a></li>
+    </ul>
+  </nav>
+
+  <!-- About Me Section -->
+  <section class="about-section" id="about">
+    <h1>About Me</h1>
+    <div class="about-wrapper">
+      <div class="about-text">
+        <p>
+          I’m <strong>Shaleen Chakraborty</strong>, currently pursuing a B.Tech in Electronics and Communication at Bharati Vidyapeeth College of Engineering, Pune. I am passionate about crafting scalable, intuitive, and responsive digital experiences. With a strong command over <span class="highlight">HTML, CSS, JavaScript, Spring Boot, and PostgreSQL</span>, I enjoy building end-to-end web systems that solve real-world problems.
+        </p>
+        <p>
+          During my internship at <strong>Indian Railways (Signal and Telecommunication Department, Moradabad Division)</strong>, I independently developed a full-stack internal portal that streamlined data recording and analysis. I designed responsive pages using HTML5, CSS, Thymeleaf, and Spring Boot, integrating Google Sheets and databases for real-time synchronization. The system is actively used by railway engineers.
+        </p>
+        <p>
+          I’ve also worked on cutting-edge AI/ML research in nanotechnology, presenting papers at international conferences in Malaysia and South Korea. I hold leadership roles in my college’s Innovation Council and Cultural Committee, where I’ve guided over 10+ projects and coordinated major technical-cultural fests.
+        </p>
+        <p>
+          Some of my key projects include:
+          <ul style="margin-top: 10px; color: #64ffda; padding-left: 20px;">
+            <li><strong>Railway Entry Portal:</strong> Full-stack website with form management, user access control, Google Sheets API, and analytics.</li>
+            <li><strong>Electrospinning Optimizer:</strong> ML-based system predicting nanofiber diameters with 99.89% accuracy.</li>
+            <li><strong>Age & Gender Detection System:</strong> Real-time ML model integrated with a responsive web UI.</li>
+          </ul>
+        </p>
+        <p>
+          I'm now seeking an opportunity at <strong>Accenture</strong> to contribute to impactful web development and marketing operations while continuing to learn and grow in a collaborative environment.
+        </p>
+      </div>
+      <div class="about-photo">
+        <img src="profile.png" alt="Shaleen Chakraborty" />
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>

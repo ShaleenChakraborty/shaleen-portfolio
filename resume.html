@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resume | Shaleen Chakraborty</title>
+  <style>
+    :root {
+      --bg-color: #0a192f;
+      --text-color: #ccd6f6;
+      --accent-color: #64ffda;
+      --card-border: #64ffda;
+    }
+
+    body.light-mode {
+      --bg-color: #ffffff;
+      --text-color: #0a192f;
+      --accent-color: #0a192f;
+      --card-border: #0a192f;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      padding: 40px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    h1 {
+      text-align: center;
+      color: var(--accent-color);
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    .resume-container {
+      width: 90%;
+      max-width: 900px;
+      height: 90vh;
+      border: 2px solid var(--card-border);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 10px 20px rgba(100, 255, 218, 0.1);
+      margin-bottom: 20px;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .btn {
+      text-decoration: none;
+      background-color: transparent;
+      color: var(--accent-color);
+      border: 1px solid var(--accent-color);
+      padding: 10px 20px;
+      border-radius: 6px;
+      font-size: 1rem;
+      margin: 10px;
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: rgba(100, 255, 218, 0.1);
+      transform: scale(1.05);
+    }
+
+    .toggle-btn {
+      background-color: transparent;
+      border: none;
+      color: var(--accent-color);
+      cursor: pointer;
+      margin-bottom: 20px;
+      font-size: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>My Resume</h1>
+
+  <button class="toggle-btn" onclick="toggleTheme()">Toggle Dark/Light Mode</button>
+
+  <div class="resume-container">
+    <iframe src="Shaleen_Chakraborty_Resume.pdf" title="Resume PDF"></iframe>
+  </div>
+
+  <a href="Shaleen_Chakraborty_Resume.pdf" class="btn" download>Download Resume PDF</a>
+  <a href="index.html" class="btn">Back to Home</a>
+
+  <script>
+    function toggleTheme() {
+      document.body.classList.toggle('light-mode');
+    }
+  </script>
+</body>
+</html>
