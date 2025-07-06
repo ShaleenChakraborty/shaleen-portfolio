@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shaleen Chakraborty</title>
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #0a192f;
+      color: #ccd6f6;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #0a192f;
+      padding: 20px 60px;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    }
+
+    .logo {
+      font-size: 22px;
+      color: #64ffda;
+      border: 2px solid #64ffda;
+      padding: 5px 10px;
+      border-radius: 50%;
+      font-weight: bold;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 25px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #ccd6f6;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: #64ffda;
+      transform: translateY(-3px);
+    }
+
+    .resume-btn {
+      border: 1px solid #64ffda;
+      padding: 8px 15px;
+      border-radius: 5px;
+      color: #64ffda !important;
+      transition: all 0.3s;
+    }
+
+    .resume-btn:hover {
+      background: rgba(100, 255, 218, 0.1);
+      transform: scale(1.05);
+    }
+
+    .hero-section {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 75vh;
+      padding: 120px 80px 40px;
+      background-color: #0a192f;
+    }
+
+    .intro {
+      font-size: 1.2rem;
+      color: #64ffda;
+      margin-bottom: 10px;
+    }
+
+    .typewriter {
+      font-size: 4.5rem;
+      font-weight: bold;
+      color: #ccd6f6;
+      border-right: 2px solid #64ffda;
+      white-space: nowrap;
+      overflow: hidden;
+      animation: typing 4s steps(25) infinite alternate, blink 0.8s step-end infinite;
+      width: 0;
+    }
+
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent; }
+    }
+
+    h2 {
+      font-size: 2.5rem;
+      font-weight: 500;
+      color: #8892b0;
+      margin-top: 15px;
+    }
+
+    .desc {
+      max-width: 600px;
+      font-size: 1.1rem;
+      color: #a8b2d1;
+      margin-top: 20px;
+      line-height: 1.6;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      margin-top: 30px;
+      color: #64ffda;
+      text-decoration: none;
+      font-weight: bold;
+      border: 1px solid #64ffda;
+      padding: 10px 20px;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+    }
+
+    .cta-btn:hover {
+      background: rgba(100, 255, 218, 0.1);
+      transform: scale(1.1) translateY(-2px);
+    }
+
+    .scroll-down {
+      display: block;
+      text-align: center;
+      font-size: 2rem;
+      color: #64ffda;
+      animation: bounce 2s infinite;
+      margin-top: -10px;
+      text-decoration: none;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(10px); }
+    }
+
+    footer {
+      background-color: #0a1b30;
+      color: #ccd6f6;
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    .footer-icons {
+      margin-bottom: 10px;
+    }
+
+    .footer-icons a {
+      margin: 0 10px;
+      color: #64ffda;
+      font-size: 1.5rem;
+      transition: transform 0.3s;
+    }
+
+    .footer-icons a:hover {
+      transform: scale(1.2);
+    }
+
+    .footer-email {
+      margin-top: 10px;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 768px) {
+      .hero-section {
+        padding: 100px 30px 20px;
+      }
+      .typewriter {
+        font-size: 2.8rem;
+      }
+      h2 {
+        font-size: 1.6rem;
+      }
+    }
+
+    
+.skills-section {
+  padding: 60px 20px;
+  background-color: #0a1b30;
+  text-align: center;
+}
+
+.skills-title {
+  font-size: 2.5rem;
+  color: #64ffda;
+  font-family: 'Segoe UI', monospace;
+  margin-bottom: 40px;
+}
+
+.skill-category {
+  font-size: 1.5rem;
+  color: #64ffda;
+  margin: 40px 0 20px;
+  text-align: left;
+  padding-left: 40px;
+}
+
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  padding: 0 30px;
+  margin-bottom: 30px;
+}
+
+.skill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90px;
+  transition: transform 0.3s ease;
+}
+
+.skill img {
+  height: 48px;
+  width: 48px;
+  object-fit: contain;
+  margin-bottom: 8px;
+}
+
+.skill span {
+  font-size: 0.85rem;
+  color: #a8b2d1;
+}
+
+.skill:hover {
+  transform: scale(1.2);
+}
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-left">
+      <div class="logo">S</div>
+    </div>
+    <ul class="nav-links">
+      <li><a href="about.html">01. About</a></li>
+      <li><a href="project.html">02. Projects</a></li>
+      <li><a href="literature.html">03. My Literature</a></li>
+      <li><a href="contact.html">04. Contact</a></li>
+      <li><a href="resume.html" class="resume-btn">Resume</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero-section">
+    <p class="intro">Hi, my name is</p>
+    <h1 class="typewriter">Shaleen Chakraborty.</h1>
+    <h2>I build things for the web.</h2>
+    <p class="desc">
+      I'm an engineering undergraduate focused on crafting high-quality, accessible, and responsive digital experiences.
+      Passionate about front-end creativity and back-end reliability.
+    </p>
+    <a href="project.html" class="cta-btn">Check out my work ↓</a>
+  </header>
+
+  <a href="#skills" class="scroll-down">↓</a>
+
+  <section id="skills" class="skills-section">
+    <h2 class="skills-title">Tech Stack & Tools</h2>
+    <!-- Skills section goes here -->
+     <div class="skill-category">Programming Languages</div>
+<div class="skills-grid">
+  <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"/><span>Java</span></div>
+  <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"/><span>Python</span></div>
+  <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg"/><span>C</span></div>
+  <div class="skill"><img src="https://www.chetu.com/img/on-demand-developers/embedded-c/logo/embeded-c.png"/><span>Embedded C</span></div>
+  <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg"/><span>MicroPython</span></div>
+  <div class="skill"><img src="https://upload.wikimedia.org/wikipedia/commons/2/21/Matlab_Logo.png"/><span>MATLAB</span></div>
+</div>
+
+<div class="skill-category">Web & Databases</div>
+<div class="skills-grid">
+  <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"/><span>HTML</span></div>
+  <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"/><span>CSS</span></div>
+  <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"/><span>JavaScript</span></div>
+  <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"/><span>MySQL</span></div>
+  <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg"/><span>PostgreSQL</span></div>
+  <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"/><span>MongoDB</span></div>
+</div>
+
+<div class="skill-category">ML & Data</div>
+<div class="skills-grid">
+  <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg"/><span>TensorFlow</span></div>
+  <div class="skill"><img src="https://upload.wikimedia.org/wikipedia/commons/3/38/Jupyter_logo.svg"/><span>Jupyter</span></div>
+</div>
+
+<div class="skill-category">Frameworks</div>
+<div class="skills-grid">
+  <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg"/><span>Bootstrap</span></div>
+  <div class="skill"><img src="https://img.icons8.com/?size=48&id=90519&format=png"/><span>Spring Boot</span></div>
+  <div class="skill"><img src="https://matplotlib.org/3.6.0/_images/sphx_glr_logos2_001_2_0x.png"/><span>Matplotlib</span></div>
+</div>
+
+<div class="skill-category">Tools</div>
+<div class="skills-grid">
+  <div class="skill"><img src="https://brandslogos.com/wp-content/uploads/images/large/arduino-logo-1.png"/><span>Arduino IDE</span></div>
+  <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg"/><span>Keil</span></div>
+  <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg"/><span>VS Code</span></div>
+  <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"/><span>Git</span></div>
+  <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"/><span>GitHub</span></div>
+  <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/intellij/intellij-original.svg"/><span>IntelliJ</span></div>
+  <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg"/><span>ThingSpeak</span></div>
+</div>
+
+  </section>
+
+  <footer>
+    <div class="footer-icons">
+      <a href="https://www.linkedin.com/in/shaleen-chakraborty" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://www.instagram.com/yourhandle" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://scholar.google.com/citations?user=yourID" target="_blank"><i class="fas fa-graduation-cap"></i></a>
+      <a href="mailto:shaleenece@gmail.com"><i class="fas fa-envelope"></i></a>
+    </div>
+    <div class="footer-email">shaleenece@gmail.com</div>
+  </footer>
+
+  <script>
+    ScrollReveal().reveal('.hero-section', { delay: 200, distance: '30px', origin: 'bottom' });
+    ScrollReveal().reveal('.skills-section', { delay: 300, distance: '30px', origin: 'top' });
+  </script>
+
+</body>
+</html>

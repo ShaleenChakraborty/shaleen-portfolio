@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shaleen Chakraborty | Literature & Poetry</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Georgia', serif;
+      background: linear-gradient(135deg, #0f172a, #5f3dc4, #f472b6);
+      color: #fcddee;
+      padding: 40px 20px;
+      cursor: crosshair;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    .sparkle {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      background: radial-gradient(circle, #ffffff 20%, #f472b6 80%);
+      border-radius: 50%;
+      pointer-events: none;
+      animation: sparkleFade 1s linear forwards;
+      z-index: 100;
+    }
+
+    @keyframes sparkleFade {
+      0% { transform: scale(1); opacity: 1; }
+      100% { transform: scale(2); opacity: 0; }
+    }
+
+    .hearts {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .heart {
+      position: absolute;
+      width: 15px;
+      height: 15px;
+      background: pink;
+      animation: floatHeart 10s linear infinite;
+      border-radius: 50% 50% 50% 0;
+      transform: rotate(-45deg);
+    }
+
+    .heart::after, .heart::before {
+      content: '';
+      position: absolute;
+      width: 15px;
+      height: 15px;
+      background: pink;
+      border-radius: 50%;
+    }
+
+    .heart::before { top: -7px; left: 0; }
+    .heart::after { top: 0; left: 7px; }
+
+    @keyframes floatHeart {
+      0% { transform: translateY(0) rotate(-45deg); opacity: 1; }
+      100% { transform: translateY(-120vh) rotate(-45deg); opacity: 0; }
+    }
+
+    .top-left-home {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      z-index: 10;
+    }
+
+    .top-left-home a {
+      color: #fcddee;
+      font-weight: bold;
+      text-decoration: none;
+      border: 2px solid #fcddee;
+      padding: 6px 12px;
+      border-radius: 6px;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .top-left-home a:hover {
+      background: #fcddee;
+      color: #2d0a24;
+    }
+
+    h1 {
+      text-align: center;
+      color: #fcddee;
+      font-size: 3rem;
+      margin-bottom: 30px;
+      font-family: 'Cursive', serif;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 3px solid #fcddee;
+      width: 0;
+      animation: typing 3.5s steps(40, end) forwards, blink 0.75s step-end infinite;
+    }
+
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 90%; }
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent; }
+    }
+
+    .intro {
+      text-align: center;
+      font-size: 1.2rem;
+      max-width: 800px;
+      margin: 0 auto 40px;
+      color: #f9c5db;
+      animation: fadeIn 3s ease-in;
+    }
+
+    .tiles {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .tile {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      text-align: center;
+      overflow: hidden;
+      transition: transform 0.5s ease, box-shadow 0.5s ease, z-index 0.3s;
+      position: relative;
+      z-index: 1;
+    }
+
+    .tile:hover {
+      transform: scale(1.2);
+      z-index: 100;
+      box-shadow: 0 20px 40px rgba(255, 255, 255, 0.25);
+    }
+
+    .tile img {
+      width: 100%;
+      max-width: 200px;
+      border-radius: 12px;
+      margin-bottom: 15px;
+    }
+
+    .tile h3 {
+      margin-bottom: 10px;
+      color: #fcddee;
+    }
+
+    .tile p {
+      font-size: 0.95rem;
+      color: #f8e1ea;
+      line-height: 1.6;
+      max-height: 6em;
+      overflow: hidden;
+      transition: max-height 0.5s ease;
+    }
+
+    .tile:hover p {
+      max-height: 20em;
+    }
+
+    .tile a.button {
+      display: inline-block;
+      margin-top: 15px;
+      background-color: #fcddee;
+      color: #380b29;
+      padding: 10px 18px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .tile a.button:hover {
+      background-color: #f9a8d4;
+    }
+
+    .back-btn {
+      display: block;
+      margin: 50px auto 0;
+      text-align: center;
+      color: #fcddee;
+      text-decoration: none;
+      font-weight: bold;
+      border: 2px solid #fcddee;
+      padding: 10px 20px;
+      border-radius: 12px;
+      background-color: transparent;
+      transition: background 0.3s, transform 0.3s;
+    }
+
+    .back-btn:hover {
+      background-color: #fcddee;
+      color: #2d0a24;
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 768px) {
+      .tile:hover {
+        transform: scale(1.05);
+      }
+      .tiles {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sparkle Effect -->
+  <script>
+    document.addEventListener('mousemove', function(e) {
+      const sparkle = document.createElement('div');
+      sparkle.className = 'sparkle';
+      sparkle.style.left = `${e.pageX}px`;
+      sparkle.style.top = `${e.pageY}px`;
+      document.body.appendChild(sparkle);
+      setTimeout(() => sparkle.remove(), 1000);
+    });
+  </script>
+
+  <div class="top-left-home">
+    <a href="index.html">🏠 Home</a>
+  </div>
+
+  <div class="hearts">
+    <div class="heart" style="left:10%; animation-delay: 0s;"></div>
+    <div class="heart" style="left:30%; animation-delay: 2s;"></div>
+    <div class="heart" style="left:50%; animation-delay: 4s;"></div>
+    <div class="heart" style="left:70%; animation-delay: 1s;"></div>
+    <div class="heart" style="left:90%; animation-delay: 3s;"></div>
+  </div>
+
+  <h1>Literature & Poetry</h1>
+  <p class="intro">
+    My friendship with pen helped me sail through the boat of my life. Some hidden and some out there in public, some read but some locked in a diary of mine. Here is a repo to my published works in some of the anthologies and magazines.
+  </p>
+
+  <div class="tiles">
+    <div class="tile">
+      <img src="assets/genre2k25.png" alt="Chitra Genre 25">
+      <h3>Story: Chitra (Genre'25)</h3>
+      <p>A story of an unconventional love set during the British rule in India.</p>
+      <a class="button" href="https://genre2k25.vercel.app/#/reader?file=magazine25.pdf">Buy/Read</a>
+    </div>
+
+    <div class="tile">
+      <img src="assets/genre2k24.png" alt="The Horizon Genre 24">
+      <h3>Poetry: The Horizon (Genre'24)</h3>
+      <p>A fictional poetry on the complexities of relations and losses.</p>
+      <a class="button" href="https://genre2k25.vercel.app/#/reader?file=magazine24.pdf">Buy/Read</a>
+    </div>
+
+    <div class="tile">
+      <img src="assets/the_last_step.jpg" alt="The Last Step cover">
+      <h3>The Last Step – Anthology</h3>
+      <p>A thoughtful piece exploring the power of choices and second chances in life.</p>
+      <a class="button" href="https://www.amazon.com/Last-Step-Sovan-Issac-Daniel/dp/9390817870">Buy/Read</a>
+    </div>
+
+    <div class="tile">
+      <img src="assets/love_is_in_the_air.jpg" alt="Love is in the air">
+      <h3>Love is in the air (Volume 2) – Poetry Book</h3>
+      <p>A poetry on the most beautiful feeling in this world - Love.</p>
+      <a class="button" href="https://www.amazon.com/Love-Air-2-Writers-India-ebook/dp/B09TQTL2XG">Buy/Read</a>
+    </div>
+
+    <div class="tile">
+      <img src="assets/hues_and_blues.jpg" alt="Hues and Blues">
+      <h3>Hues and Blues</h3>
+      <p>Humanity doesn't exist in solids but in hues and blues.</p>
+      <a class="button" href="https://www.amazon.com/Hues-Blues-Collection-Multiple-Poets-ebook/dp/B09VVYJLHV">Buy/Read</a>
+    </div>
+
+    <div class="tile">
+      <img src="assets/memories.jpg" alt="Memories Vol 3">
+      <h3>Memories Volume-3</h3>
+      <p>Explores how silence often speaks louder than any noise in the world around us.</p>
+      <a class="button" href="https://www.amazon.com/Memories-Vol-3-Writers-India-ebook/dp/B0BB2R9W3S">Buy/Read</a>
+    </div>
+  </div>
+
+  <a class="back-btn" href="index.html">← Back to Portfolio</a>
+
+</body>
+</html>
